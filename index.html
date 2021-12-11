@@ -1,13 +1,192 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<title>Igor Savelev (@leonspok) - iOS Developer</title>
+		<style>
+			body {
+				font-family: Tahoma, sans-serif;
+				font-size: 12pt;
+				color: black;
+				background-color: white;
+			}
+
+			header, main {
+				padding-left: 20px;
+				padding-right: 20px;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 768px;
+			}
+
+			a {
+				color: #1ab4f2;
+			}
+
+			a:visited {
+				color: #a03bff;
+			}
+
+			ul.inline-list {
+				list-style: none;
+				padding: 0;
+			}
+
+			ul.inline-list li {
+				display: inline;
+			}
+
+			header {
+				padding-top: 50px;
+			}
+
+			header h1 {
+				font-size: 2em;
+			}
+
+			header p, header ul {
+				margin-top: 0.6em;
+				margin-bottom: 0.6em;
+			}
+
+			header p#location::before {
+				content: "🗺 ";
+			}
+
+			header ul#links::before {
+				content: "🔗 ";
+			}
+
+			main {
+				padding-bottom: 50px;
+			}
+
+			main section {
+				padding-top: 50px;
+			}
+
+			main h1 {
+				font-size: 1.6em;
+			}
+
+			main h2 {
+				font-size: 1.4em;
+				font-weight: medium;
+				margin-bottom: 10px;
+			}
+
+			main article {
+				display: flex;
+				flex-direction: row-reverse;
+				flex-wrap: nowrap;
+				justify-content: space-between;
+			}
+
+			main article:not(:last-child) {
+				padding-bottom: 30px;
+			}
+
+			ul.platform-tags {
+				margin-top: 0;
+			}
+
+			ul.platform-tags li {
+				font-family: Courier, monospace;
+				font-size: 10pt;
+				color: white;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				padding-left: 8px;
+				padding-right: 8px;
+				background-color: #BBB;
+				border-radius: 5px;
+			}
+
+			main img.app-icon.mac-os, main img.app-icon.linux {
+				width: 160px;
+				height: 160px;
+				padding: 10px;
+			}
+
+			main img.app-icon.ios {
+				width: 120px;
+				height: 120px;
+				padding: 25px;
+			}
+
+			main article details {
+				margin-bottom: 20px;
+			}
+
+			main article details summary {
+				color: #BBB;
+				font-size: 0.8em;
+				margin-bottom: 10px;
+			}
+
+			main a.view-button {
+				display: inline-block;
+				text-decoration: none;
+				background-color: #1ab4f2;
+				color: white;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				padding-left: 8px;
+				padding-right: 8px;
+				margin-top: 10px;
+				border-radius: 5px;
+			}
+
+			main video.preview {
+				max-width: 100%;
+				border-radius: 5px;
+			}
+
+			main a.screenshot > img,
+			main a.promo > img {
+				display: block;
+				max-width: 100%;
+				border-radius: 5px;
+			}
+
+			noscript {
+				text-align: center;
+			}
+
+			@media (max-width: 480px) {
+				main article {
+					align-items: center;
+					flex-direction: column;
+				}
+
+				main article div.app-info {
+					width: 100%;
+				}
+
+				main img.app-icon.ios, 
+				main img.app-icon.mac-os,
+				main img.app-icon.linux {
+					padding-bottom: 0;
+				}
+			}
+
+			@media (prefers-color-scheme: dark) {
+				body {
+					color: white;
+					background-color: #1F1F1F;
+				}
+
+				ul.platform-tags li {
+					background-color: #999;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<header>
 			<h1>Igor Savelev <span class="nickname">@leonspok</span></h1>
-			<p>iOS Developer <a href="https://bumble.com">@Bumble</a>. Occasional indie macOS/iOS developer.</p>
-			<p>Born in Kazan, Russia. Now in London, UK.</p>
-			<ul>
+			<p id="description">iOS Developer <a href="https://bumble.com">@Bumble</a>. Occasional indie macOS/iOS developer.</p>
+			<p id="location">Born in Kazan, Russia. Now in London, UK.</p>
+			<ul id="links" class="inline-list">
 				<li>
 					<a href="https://github.com/leonspok">Github</a>
 				</li>
@@ -19,60 +198,148 @@
 				</li>
 			</ul>
 		</header>
-		<hr>
 		<main>
-			<section>
+			<section id="ongoing-projects">
 				<h1>Ongoing projects</h1>
-				<article>
-					<img src="irvue/app_icon.png">
-					<h2>Irvue <span class="platform-tag">macOS</span></h2>
-					<p>Thousands of stunning high-resolutions photos from <a href="https://unsplash.com">Unsplash</a> on your Mac. Enjoy new artistic wallpapers everyday with this small application, which lives in your menu bar.</p>
-					<details>
-						<summary>More</summary>
-						<ul>
-							<li>
-								<a href="irvue/privacy_policy">Privacy Policy</a>
-							</li>
-							<li>
-								<a href="irvue/apple_script_support">AppleScript API</a>
-							</li>
+				<article id="irvue">
+					<img src="irvue/app_icon.png" class="app-icon mac-os">
+					<div class="app-info">
+						<h2>Irvue</h2>
+						<ul class="platform-tags inline-list">
+							<li>macOS</li>
 						</ul>
-					</details>
-					<a href="https://apps.apple.com/app/irvue/id1039633667">View in App Store</a>
+						<p>Thousands of stunning high-resolutions photos from <a href="https://unsplash.com">Unsplash</a> on your Mac. Enjoy new artistic wallpapers everyday with this small application, which lives in your menu bar.</p>
+						<details>
+							<summary>More</summary>
+							<ul>
+								<li>
+									<a href="irvue/privacy_policy">Privacy Policy</a>
+								</li>
+								<li>
+									<a href="irvue/apple_script_support">AppleScript API</a>
+								</li>
+							</ul>
+							<video class="preview" controls>
+								<source src="irvue/preview.mp4">
+							</video>
+						</details>
+						<a href="https://apps.apple.com/app/irvue/id1039633667" class="view-button">View in App Store</a>
+					</div>
 				</article>
-				<article>
-					<img src="kuar/app_icon.png">
-					<h2>Kuar <span class="platform-tag">macOS</span></h2>
-					<p>QR Code generator with Safari and Share extensions.</p>
-					<details>
-						<summary>More</summary>
-						<ul>
-							<li>
-								<a href="/kuar/privacy_policy">Privacy Policy</a>
-							</li>
+				<article id="kuar">
+					<img src="kuar/app_icon.png" class="app-icon mac-os">
+					<div class="app-info">
+						<h2>Kuar</h2>
+						<ul class="platform-tags inline-list">
+							<li>macOS</li>
 						</ul>
-					</details>
-					<a href="https://apps.apple.com/app/kuar-qr-code-generator/id1553562554">View in App Store</a>
+						<p>QR Code generator with Safari and Share extensions.</p>
+						<details>
+							<summary>More</summary>
+							<ul>
+								<li>
+									<a href="kuar/privacy_policy">Privacy Policy</a>
+								</li>
+							</ul>
+							<video class="preview" controls>
+								<source src="kuar/preview.mp4">
+							</video>
+						</details>
+						<a href="https://apps.apple.com/app/kuar-qr-code-generator/id1553562554" class="view-button">View in App Store</a>
+					</div>
+				</article>
+				<article id="yape">
+					<img src="yape/app_icon.png" class="app-icon mac-os">
+					<div class="app-info">
+						<h2>Yape - Yet Another PiP Extension</h2>
+						<ul class="platform-tags inline-list">
+							<li>macOS</li>
+						</ul>
+						<p>Yape does a very simple thing: finds all HTML5 videos on a webpage and allows you to play them in the Picture-in-Picture mode. Just click on an item from the list and this video will be switched to the Picture-in-Picture mode.</p>
+						<details>
+							<summary>More</summary>
+							<a href="yape/screenshot_1.png" target="_blank" class="screenshot">
+								<img src="yape/screenshot_1.png">
+							</a>
+						</details>
+						<a href="https://github.com/leonspok/Yape" class="view-button">View on GitHub</a>
+					</div>
+				</article>
+				<article id="qtpip">
+					<img src="qtpip/app_icon.png" class="app-icon linux">
+					<div class="app-info">
+						<h2>QtPiP</h2>
+						<ul class="platform-tags inline-list">
+							<li>Linux</li>
+						</ul>
+						<p>Picture in Picture player (inspired by macOS).</p>
+						<details>
+							<summary>More</summary>
+							<a href="qtpip/screenshot_1.png" target="_blank" class="screenshot">
+								<img src="qtpip/screenshot_1.png">
+							</a>
+						</details>
+						<a href="https://github.com/leonspok/QtPiP" class="view-button">View on GitHub</a>
+					</div>
 				</article>
 			</section>
-			<section>
+			<section id="discontinued">
 				<h1>Discontinued</h1>
-				<article>
-					<img src="10s/app_icon.png">
-					<h2>10s <span class="platform-tag">iOS</span> <span class="platform-tag">iPadOS</span> <span class="platform-tag">tvOS</span></h2>
-					<p>Unofficial client for <a href="https://coub.com">Coub</a></p>
+				<article id="10s">
+					<img src="10s/app_icon.png" class="app-icon ios">
+					<div class="app-info">
+						<h2>10s</h2>
+						<ul class="platform-tags inline-list">
+							<li>iOS</li>
+							<li>iPadOS</li>
+							<li>tvOS</li>
+						</ul>
+						<p>Unofficial client for <a href="https://coub.com">Coub</a></p>
+						<details>
+							<summary>More</summary>
+							<a href="10s/promo_1.jpeg" target="_blank" class="promo">
+								<img src="10s/promo_1.jpeg">
+							</a>
+						</details>
+					</div>
 				</article>
-				<article>
-					<img src="habco/app_icon.png">
-					<h2>Habco <span class="platform-tag">iOS</span></h2>
-					<p>Recording videos of interaction with live prototypes (Invision, Marvel, Framer, etc.)</p>
+				<article id="habco">
+					<img src="habco/app_icon.png" class="app-icon ios">
+					<div class="app-info">
+						<h2>Habco</h2>
+						<ul class="platform-tags inline-list">
+							<li>iOS</li>
+						</ul>
+						<p>Recording videos of interaction with live prototypes (Invision, Marvel, Framer, etc.)</p>
+						<details>
+							<summary>More</summary>
+							<a href="habco/promo_1.jpeg" target="_blank" class="promo">
+								<img src="habco/promo_1.jpeg">
+							</a>
+						</details>
+					</div>
 				</article>
-				<article>
-					<img src="fair_enough/app_icon.png">
-					<h2>Fair Enough <span class="platform-tag">iOS</span> <span class="platform-tag">iPadOS</span></h2>
-					<p>Time is our one of the most important resources. What if you will pay yourself "time for fun" for every useful action you did. Complete your course project - get 2 hours for playing Deus Ex. Made 30 push-ups - enjoy your 20 minutes episode on TV. Fair enough!</p>
+				<article id="fair_enough">
+					<img src="fair_enough/app_icon.png" class="app-icon ios">
+					<div class="app-info">
+						<h2>Fair Enough</h2>
+						<ul class="platform-tags inline-list">
+							<li>iOS</li>
+							<li>iPadOS</li>
+						</ul>
+						<p>Time is our one of the most important resources. What if you will pay yourself "time for fun" for every useful action you did. Complete your course project - get 2 hours for playing Deus Ex. Made 30 push-ups - enjoy your 20 minutes episode on TV. Fair enough!</p>
+						<details>
+							<summary>More</summary>
+							<video class="preview" controls>
+								<source src="fair_enough/preview.mp4">
+							</video>
+						</details>
+					</div>
 				</article>
 			</section>
 		</main>
+		<noscript>
+			<p><em>Look, no Javascript!</em></p>
+		</noscript>
 	</body>
 </html>
