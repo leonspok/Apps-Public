@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>Irvue AppleScript Commands</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
+    	hr {
+		    border: none;
+		}
+
+		hr:before {
+		    display: block;
+		    content: "***";
+		    text-align: center;
+		}
+
+		/*a {
+		    text-decoration: none;
+		    color: inherit;
+		}
+
+		a:hover {
+		    color: inherit;
+		}*/
+
+		a img {
+		    border: none;
+		}
+
+		code {
+		    word-break: break-word;
+		    word-wrap: break-word;
+		    white-space: pre;
+		    display: block;
+		    background: rgb(238, 238, 238);
+		    padding: 1em;
+		    font-size: 0.9em;
+		    font-family: "Monaco", "Courier New", monospace;
+		}
+
+		html, body {
+		    font-family: 'Open Sans', 'Helvetica Neue';
+		    color: #4a4a4a;
+		    font-size: 13pt;
+		}
+
+		h1 {
+		    font-size: 1.7em;
+		}
+
+		h2 {
+		    font-size: 1.5em;
+		}
+
+		h3 {
+		    font-size: 1.3em;
+		    font-weight: 300;
+		}
+
+		h4 {
+		    font-size: 1em;
+		    text-transform: uppercase;
+		}
+
+		h5 {
+		    font-weight: normal;
+		    color: #999;
+		    border-bottom: 1px solid #eaeaea;
+		    padding-bottom: 5px;
+		    padding-top: 10px;
+		    margin-bottom: 5px;
+		    font-size: .95em;
+		}
+
+		h6 {
+		    color: #AAA;
+		    font-weight: 600;
+		    border-bottom: 1px solid #eaeaea;
+		    padding-bottom: 5px;
+		    padding-top: 10px;
+		    margin-bottom: 5px;
+		    font-size: .8em;
+		}
+
+		blockquote {
+		   font-size: 0.8em;
+		   margin-left: 0;
+		   padding-left: 1em;
+		   border-left: 6px solid #eaeaea;
+		}
+
+		img, iframe, video {
+		    margin-left: auto;
+		    margin-right: auto;
+		    display: block;
+		    max-width: 100% !important;
+		    max-height: 600px;
+		    border-radius: 5px;
+		}
+
+		* {
+		    -webkit-print-color-adjust: exact;
+		}
+
+		@media screen and (min-width: 914px) {
+		    body {
+		        width: 854px;
+		        margin:10px auto;
+		    }
+		}
+
+		@media print {
+		    body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		        color: black;
+		    }
+		    table, pre {
+		        page-break-inside: avoid;
+		    }
+		}
+    </style>
+</head>
+<body>
+	<h1>Irvue AppleScript Commands</h1>
+	<ul>
+		<li><a href="#change-current-wallpaper">change current wallpaper</a></li>
+		<li><a href="#load-previous-wallpaper">load previous wallpaper</a></li>
+		<li><a href="#change-all-wallpapers">change all wallpapers</a></li>
+		<li><a href="#load-first-wallpaper">load first wallpaper</a></li>
+		<li><a href="#get-all-channels">get all channels</a></li>
+		<li><a href="#get-default-channels">get default channels</a></li>
+		<li><a href="#get-current-channel">get current channel</a></li>
+		<li><a href="#set-current-channel">set current channel</a></li>
+		<li><a href="#remove-channel">remove channel</a></li>
+		<li><a href="#add-channels-from">add channels from</a></li>
+		<li><a href="#set-update-interval">set update interval</a></li>
+		<li><a href="#save-current-wallpaper">save current wallpaper</a></li>
+		<li><a href="#toggle-like-current-wallpaper">toggle like current wallpaper</a></li>
+	</ul>
+	<hr>
+
+	<h2 id="change-current-wallpaper">Change current wallpaper</h2>
+	<ul>
+		<li><b>Command Name:</b> change current wallpaper</li>
+		<li><b>Description:</b> Changes current wallpaper. If option "multiple monitors" in settings was set to "different wallpapers", then wallpaper will be changed only on current monitor (monitor with active window or pointer).</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	change current wallpaper
+end tell</code>
+
+	<h2 id="load-previous-wallpaper">Load previous wallpaper</h2>
+	<ul>
+		<li><b>Command Name:</b> load previous wallpaper</li>
+		<li><b>Description:</b> Loads previously used wallpaper in channel.</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	load previous wallpaper
+end tell</code>
+
+	<h2 id="change-all-wallpapers">Change all wallpapers</h2>
+	<ul>
+		<li><b>Command Name:</b> change all wallpapers</li>
+		<li><b>Description:</b> Changes wallpaper on all displays.</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	change all wallpapers
+end tell</code>
+
+	<h2 id="load-first-wallpaper">Load first wallpaper</h2>
+	<ul>
+		<li><b>Command Name:</b> load first wallpaper</li>
+		<li><b>Description:</b> Loads first wallpaper in current channel.</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	load first wallpaper
+end tell</code>
+
+	<h2 id="get-all-channels">Get All Channels</h2>
+	<ul>
+		<li><b>Command Name:</b> get all channels</li>
+		<li><b>Description:</b> Returns list of available channels.</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> List of strings</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	get all wallpapers
+end tell</code>
+	<p>Example response:</p>
+	<code>{"All photos", "Collection #126", "MacOS Wallpapers", "Featured"}</code>
+
+	<h2 id="get-default-channels">Get Default Channels</h2>
+	<ul>
+		<li><b>Command Name:</b> get default channels</li>
+		<li><b>Description:</b> Returns list of names of default channels.</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> List of strings</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	get default wallpapers
+end tell</code>
+	<p>Example response:</p>
+	<code>{"Featured", "All photos"}</code>
+
+	<h2 id="get-current-channel">Get Current Channel</h2>
+	<ul>
+		<li><b>Command Name:</b> get current channel</li>
+		<li><b>Description:</b> Returns name of current channel.</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> String</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	get current channel
+end tell</code>
+	<p>Example response:</p>
+	<code>"MacOS Wallpapers"</code>
+
+	<h2 id="set-current-channel">Set Current Channel</h2>
+	<ul>
+		<li><b>Command Name:</b> set current channel</li>
+		<li><b>Description:</b> Changes current channel to the one with given name</li>
+		<li><b>Parameters:</b> String - channel name</li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	set current channel "Featured"
+end tell</code>
+
+	<h2 id="remove-channel">Remove Channel</h2>
+	<ul>
+		<li><b>Command Name:</b> remove channel</li>
+		<li><b>Description:</b> Removes channel with given name</li>
+		<li><b>Parameters:</b> String - channel name</li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	remove channel "Nature"
+end tell</code>
+
+	<h2 id="add-channels-from">Add Channels</h2>
+	<ul>
+		<li><b>Command Name:</b> add channel from</li>
+		<li><b>Description:</b> Adds all possible channels from given URL or search query</li>
+		<li><b>Parameters:</b> String - URL to Unsplash page or search query</li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	add channels from "Nature"
+end tell
+
+tell application "Irvue"
+	add channels from "https://unsplash.com/@leonspok"
+end tell
+
+tell application "Irvue"
+	add channels from "https://unsplash.com/collections/curated/127"
+end tell
+
+tell application "Irvue"
+	add channels from "https://unsplash.com/collections/347317/tech"
+end tell</code>
+
+	<h2 id="set-update-interval">Set Update Interval</h2>
+	<ul>
+		<li><b>Command Name:</b> set update interval</li>
+		<li><b>Description:</b> Changes update interval to the given. If specified number is 0 or less, then update will be set to "Update manually".</li>
+		<li><b>Parameters:</b> Number - Update interval in minutes</li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	set update interval 15
+end tell</code>
+
+	<h2 id="save-current-wallpaper">Save current wallpaper</h2>
+	<ul>
+		<li><b>Command Name:</b> save current wallpaper</li>
+		<li><b>Description:</b> Saves wallpaper from active screen</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	save current wallpaper
+end tell</code>
+
+	<h2 id="toggle-like-current-wallpaper">Toggle like current wallpaper</h2>
+	<ul>
+		<li><b>Command Name:</b> toggle like current wallpaper</li>
+		<li><b>Description:</b> Likes or unlikes wallpaper from current screen</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> no return value</li>
+	</ul>
+	<p>Example:</p>
+	<code>tell application "Irvue"
+	toggle like current wallpaper
+end tell</code>
+
+</body>
+</html>
