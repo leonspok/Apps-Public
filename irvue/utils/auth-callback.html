@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <script>
+            var query = window.location.search;
+		    var appURL = "irvue://auth"+query;
+			window.location = appURL;
+			
+			setTimeout(function() {
+			    window.location = "https://unsplash.com";
+			}, 5000);
+        </script>
+    </body>
+</html>>
