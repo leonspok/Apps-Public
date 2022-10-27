@@ -136,6 +136,7 @@
 		<li><a href="#save-current-wallpaper">save current wallpaper</a></li>
 		<li><a href="#toggle-like-current-wallpaper">toggle like current wallpaper</a></li>
 		<li><a href="#get-current-wallpaper-url">get current wallpaper url</a></li>
+		<li><a href="#get-current-wallpaper-info">get current wallpaper info</a></li>
 	</ul>
 	<hr>
 
@@ -325,6 +326,29 @@ end tell</code>
 	<code>tell application "Irvue"
 	get current wallpaper url
 end tell</code>
+
+	<h2 id="get-current-wallpaper-info">Get information about the current wallpaper</h2>
+	<ul>
+		<li><b>First supported version:</b> 2.7.15</li>
+		<li><b>Command Name:</b> get current wallpaper info</li>
+		<li><b>Description:</b> Returns AppleScript record with the information about the current wallpaper</li>
+		<li><b>Parameters:</b> no parameters </li>
+		<li><b>Return value:</b> record</li>
+	</ul>
+	<p>Example #1:</p>
+	<code>tell application "Irvue"
+	set wallpaper to get current wallpaper info
+	wallpaper
+end tell</code>
+	<p>Output #1:</p>
+	<code>{likes count:301, location longitude:0.0, is liked:false, location latitude:0.0, path:"/Users/igorsavelev/Library/Containers/com.leonspok.osx.Irvue/Data/Library/Application Support/Irvue/unsplash_111.jpg", unsplash url:"https://unsplash.com/photos/-111", name of the author:"Author"}</code>
+	<p>Example #2:</p>
+	<code>tell application "Irvue"
+	set wallpaper to get current wallpaper info
+	likes count of wallpaper
+end tell</code>
+	<p>Output #2:</p>
+	<code>301</code>
 
 </body>
 </html>
