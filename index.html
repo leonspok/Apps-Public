@@ -56,17 +56,17 @@
 			
 			/* Focus indicators for accessibility */
 			a:focus,
-			summary:focus {
+			a:focus-visible {
 				outline: 2px solid #0066cc;
 				outline-offset: 2px;
 				border-radius: 2px;
 			}
 			
-			/* Ensure focus is visible even when styling is custom */
-			a:focus-visible,
+			/* Special focus styling for summary elements */
+			summary:focus,
 			summary:focus-visible {
-				outline: 2px solid #0066cc;
-				outline-offset: 2px;
+				outline: none;
+				background-color: rgba(0, 0, 0, 0.06);
 			}
 			
 			/* Skip navigation link */
@@ -246,9 +246,12 @@
 				transition: color 0.2s ease;
 				text-decoration: underline;
 				text-decoration-color: transparent;
-				transition: text-decoration-color 0.2s ease, color 0.2s ease;
+				transition: text-decoration-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 				list-style: none;
 				position: relative;
+				padding: 4px 8px;
+				margin: -4px -8px 8px -8px;
+				border-radius: 4px;
 			}
 			
 			main article details summary::-webkit-details-marker {
@@ -434,10 +437,13 @@
 				
 				/* Dark mode focus indicators */
 				a:focus,
-				a:focus-visible,
+				a:focus-visible {
+					outline-color: #4dabf7;
+				}
+				
 				summary:focus,
 				summary:focus-visible {
-					outline-color: #4dabf7;
+					background-color: rgba(255, 255, 255, 0.1);
 				}
 				
 				@media (max-width: 768px) {
@@ -490,6 +496,9 @@
 								</li>
 								<li>
 									<a href="irvue/apple_script_support">AppleScript API</a>
+								</li>
+								<li>
+									<a href="irvue/landing">Landing Page</a>
 								</li>
 							</ul>
 							<video class="preview" preload="none" controls>

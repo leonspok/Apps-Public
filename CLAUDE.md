@@ -12,7 +12,7 @@ The repository follows a simple pattern where each app has its own directory con
 - `app_icon.png` - Application icon
 - `preview.mp4` - Demo video (optional)
 - `<app>/<subfolder>/index.html` contains subpages for the given app. Common example is `irvue/privacy_policy/index.html` which contains Privacy Policy for Irvue.
-- `utils` subfolder may contain some technical pages. For example `auth_callback.html` allows redirection back to the Irvue macOS app after oAuth authorisation in Unsplash.
+- `utils` subfolder may contain technical pages (e.g., `auth_callback.html` for OAuth redirection) but these should NOT be included in the "More" sections as they are not user-facing content.
 
 ### Key Files
 - `/index.html` - Main portfolio page listing all applications
@@ -36,7 +36,7 @@ This is a static website with no build process. To make changes:
 ### Updating App Information
 - Edit the relevant section in index.html
 - Update app icons or preview videos by replacing files in the app directory
-- Add links to the subpages from the corresponding folder to the list
+- Add links to user-facing subpages in the "More" sections (exclude utils folders)
 
 ## Architecture Notes
 
