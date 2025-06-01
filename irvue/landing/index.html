@@ -1,108 +1,227 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#">
+<html lang="en">
     <head>
-        <meta property="og:title" content="Irvue for macOS">
-        <meta property="og:description" content="Gorgeous wallpapers on your Mac.">
-        <meta property="og:url" content="https://leonspok.com/irvue/landing">
-        <meta property="og:image" content="https://leonspok.com/irvue/landing/resources/promo.png">
-        <meta name="keywords" content="mac,wallpaper,unsplash,irvue">
-        <meta name="description" content="Gorgeous wallpapers on your Mac.">
-        <title>Irvue for OS X</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="styles/irvue.css" rel="stylesheet" type="text/css">
+        <title>Irvue for macOS - Gorgeous Unsplash Wallpapers</title>
+        <meta name="description" content="Transform your Mac with thousands of stunning high-resolution photos from Unsplash. Enjoy new artistic wallpapers every day with this elegant menu bar application.">
+        <meta name="keywords" content="mac,wallpaper,unsplash,irvue,desktop,backgrounds,photography,menu bar">
+        
+        <!-- Open Graph -->
+        <meta property="og:title" content="Irvue for macOS - Gorgeous Unsplash Wallpapers">
+        <meta property="og:description" content="Transform your Mac with thousands of stunning high-resolution photos from Unsplash. Enjoy new artistic wallpapers every day with this elegant menu bar application.">
+        <meta property="og:url" content="https://leonspok.com/irvue/landing">
+        <meta property="og:image" content="https://leonspok.com/irvue/landing/resources/promo.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Igor Savelev">
+        
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Irvue for macOS - Gorgeous Unsplash Wallpapers">
+        <meta name="twitter:description" content="Transform your Mac with thousands of stunning high-resolution photos from Unsplash. Enjoy new artistic wallpapers every day with this elegant menu bar application.">
+        <meta name="twitter:image" content="https://leonspok.com/irvue/landing/resources/promo.png">
+        <meta name="twitter:creator" content="@leonspok">
+        
         <style>
+            /* Reset and base styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
             body {
-                line-height: 1.5;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                line-height: 1.4;
+                color: #333;
+            }
+            
+            img, video {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            /* Skip navigation link */
+            .skip-link {
+                position: absolute;
+                top: -40px;
+                left: 6px;
+                background: #0066cc;
+                color: white;
+                padding: 8px;
+                text-decoration: none;
+                border-radius: 4px;
+                z-index: 1000;
+                font-weight: 500;
+            }
+            
+            .skip-link:focus {
+                top: 6px;
+                outline: 2px solid #fff;
+                outline-offset: 2px;
+            }
+            
+            /* Screen reader only text */
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border: 0;
+            }
+            
+            /* Focus indicators */
+            a:focus,
+            a:focus-visible {
+                outline: 2px solid #0066cc;
+                outline-offset: 2px;
+                border-radius: 2px;
+            }
+            
+            video:focus {
+                outline: none;
+            }
+            
+            /* Hero section */
+            .hero {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                padding: 40px 20px;
+            }
+            
+            .hero-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                align-items: center;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .hero-icon {
+                width: 128px;
+                height: 128px;
+                margin-bottom: 30px;
+                margin-left: -12.5px;
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 15px;
+                color: #333;
+            }
+            
+            .hero p {
+                font-size: 1.25rem;
+                margin-bottom: 30px;
+                color: #666;
+            }
+            
+            .hero-image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .hero-image video {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+            
+            .cta-button {
+                display: inline-block;
+                background: #0066cc;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 600;
+                font-size: 1.1rem;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            
+            .cta-button:hover {
+                background: #004999;
+                transform: translateY(-2px);
+            }
+            
+            
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .hero {
+                    min-height: 100vh;
+                    padding: 40px 20px;
+                }
+                
+                .hero-content {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                    text-align: center;
+                }
+                
+                .hero-text {
+                    align-items: center;
+                }
+                
+                .hero h1 {
+                    font-size: 2.5rem;
+                }
+                
+                .hero p {
+                    font-size: 1.1rem;
+                }
+                
+                .hero-icon {
+                    width: 100px;
+                    height: 100px;
+                    margin-bottom: 20px;
+                }
+                
+                .cta-button {
+                    padding: 14px 28px;
+                    font-size: 1rem;
+                }
+                
             }
         </style>
     </head>
     <body>
-        <div class="cover">
-            <div class="cover-image" style="background-image : url('resources/background1.jpeg')"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <img src="resources/icon_256x256.png" class="center-block img-responsive">
-                        <h1 class="text-inverse">Irvue for macOS</h1>
-                        <p class="text-inverse">Gorgeous wallpapers on your Mac.</p>
-                        <br>
-                        <br>
-                        <a class="btn btn-lg btn-primary" href="https://itunes.apple.com/app/irvue-unsplash-wallpapers/id1039633667">Download on Mac App Store</a>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <main id="main-content">
+            <section class="hero" aria-labelledby="hero-heading">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <img src="resources/icon_128x128.png" srcset="resources/icon_128x128.png 1x, resources/icon_128x128@2x.png 2x, resources/icon_128x128@3x.png 3x" alt="Irvue app icon" class="hero-icon">
+                        <h1 id="hero-heading">Irvue for macOS</h1>
+                        <p>Gorgeous wallpapers on your Mac.</p>
+                        <a href="https://apps.apple.com/app/irvue-unsplash-wallpapers/id1039633667" class="cta-button" target="_blank" rel="noopener" aria-describedby="cta-description">Download on Mac App Store</a>
+                        <span id="cta-description" class="sr-only">Download Irvue from the Mac App Store - opens in a new tab</span>
+                    </div>
+                    <div class="hero-image">
+                        <video preload="metadata" controls poster="resources/macbook_pro.png" aria-label="Irvue app demonstration video showing wallpaper changing functionality">
+                            <source src="resources/preview.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img class="img-responsive" src="resources/unsplash-screenshot.png">
-                    </div>
-                    <div class="col-md-6">
-                        <h2 class="text-primary">Thousands of stunning photos from Unsplash on your Mac</h2>
-                        <h3>Don't worry about where to find a new wallpaper for your Mac. There are tons of gorgeous high-resolution photos on Unsplash. Irvue brings them to your desktop.</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="text-primary">Everything in a few clicks</h2>
-                        <h4>Irvue is a menu bar application in the first place. Refresh your desktop wallpaper without distracting from your main work.</h4>
-                    </div>
-                    <div class="col-md-6">
-                        <img class="img-responsive" src="resources/macbook_pro.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="resources/channels_window.png" class="img-responsive">
-                    </div>
-                    <div class="col-md-6">
-                        <h2 class="text-primary">Channels</h2>
-                        <h4>If you have a specific taste - use channels. For example, photos or likes of a user on Unsplash, collections or search queries.</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-center text-primary">Made by
-                            <br>
-                            <br>
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        <a href="http://leonspok.com" class="center-block img-circle img-responsive"><img src="resources/avatar2.jpeg" class="center-block img-circle img-responsive"></a>
-                        <img>
-                        <h4 class="text-center">Igor Savelev</h4>
-                        <p class="text-center">
-                            <a href="https://leonspok.com">@leonspok</a>
-                        </p>
-                    </div>
-                    <div class="col-md-4"></div>
-                </div>
-            </div>
-        </div>
+            </section>
+        </main>
     </body>
 </html>
