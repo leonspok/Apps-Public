@@ -1,10 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta property="og:title" content="Igor Savelev (@leonspok)" />
-		<meta property="og:description" content="iOS Developer. Ex-iOS Core Team @Bumble. Occasional indie macOS/iOS developer." />
+		<meta name="description" content="iOS Developer @Goodnotes. Ex-iOS Core Team @Bumble. Occasional indie macOS/iOS developer." />
+		<meta name="author" content="Igor Savelev" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:title" content="Igor Savelev (@leonspok) - iOS Developer" />
+		<meta property="og:description" content="iOS Developer @Goodnotes. Ex-iOS Core Team @Bumble. Occasional indie macOS/iOS developer." />
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://leonspok.com" />
+		<meta property="og:image" content="https://leonspok.com/irvue/app_icon.png" />
+		
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Igor Savelev (@leonspok) - iOS Developer" />
+		<meta name="twitter:description" content="iOS Developer @Goodnotes. Ex-iOS Core Team @Bumble. Occasional indie macOS/iOS developer." />
+		<meta name="twitter:image" content="https://leonspok.com/irvue/app_icon.png" />
 		<meta name="theme-color" content="#ffffff" media=" (prefers-color-scheme: light)" />
 		<meta name="theme-color" content="#1F1F1F" media=" (prefers-color-scheme: dark)" />
 		<title>Igor Savelev (@leonspok) - iOS Developer</title>
@@ -13,8 +26,8 @@
 				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 				font-size: 16px;
 				line-height: 1.6;
-				color: #333;
-				background-color: #fafafa;
+				color: #000;
+				background-color: #fff;
 				margin: 0;
 				padding: 0;
 			}
@@ -29,13 +42,12 @@
 
 			a {
 				color: #0066cc;
-				text-decoration: none;
+				text-decoration: underline;
 				transition: color 0.2s ease;
 			}
 
 			a:hover {
 				color: #0052a3;
-				text-decoration: underline;
 			}
 
 			a:visited {
@@ -50,7 +62,7 @@
 
 			ul.inline-list li {
 				display: inline;
-				margin-right: 20px;
+				margin-right: 12px;
 			}
 
 			ul.inline-list li:last-child {
@@ -58,14 +70,12 @@
 			}
 
 			header {
-				padding-top: 60px;
+				padding-top: 50px;
 				padding-bottom: 40px;
-				text-align: center;
-				border-bottom: 1px solid #e0e0e0;
 			}
 
 			header h1 {
-				font-size: 2.8em;
+				font-size: 2.4em;
 				font-weight: 700;
 				margin: 0 0 10px 0;
 				letter-spacing: -0.02em;
@@ -77,77 +87,86 @@
 			}
 
 			header p#description {
-				font-size: 1.2em;
-				color: #666;
-				margin: 15px 0;
+				font-size: 1.1em;
+				color: #333;
+				margin: 12px 0;
 			}
 
 			header p#location {
-				color: #999;
-				font-size: 1em;
-				margin: 10px 0;
+				color: #666;
+				font-size: 0.95em;
+				margin: 8px 0;
 			}
 
 			header p#location::before {
-				content: "📍 ";
+				content: "🗺 ";
+			}
+
+			header ul#links::before {
+				content: "🔗 ";
 			}
 
 			header ul#links {
-				margin-top: 25px;
+				margin-top: 15px;
 				font-size: 1em;
 			}
 
 			main {
-				padding-bottom: 80px;
+				padding-bottom: 40px;
 			}
 
 			main section {
-				padding-top: 60px;
+				padding-top: 40px;
 			}
 
 			main section:first-child {
-				padding-top: 50px;
+				padding-top: 30px;
 			}
 
 			main h1 {
-				font-size: 2em;
+				font-size: 1.8em;
 				font-weight: 600;
-				margin-bottom: 30px;
+				margin-bottom: 25px;
 				letter-spacing: -0.01em;
 			}
 
 			main h2 {
-				font-size: 1.5em;
+				font-size: 1.4em;
 				font-weight: 600;
-				margin: 0 0 8px 0;
+				margin: 0 0 6px 0;
 				letter-spacing: -0.01em;
 			}
 
 			main article {
-				background: white;
-				border-radius: 12px;
-				padding: 24px;
-				margin-bottom: 20px;
-				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-				transition: box-shadow 0.3s ease, transform 0.3s ease;
+				padding: 20px 0;
+				margin-bottom: 16px;
 				display: flex;
-				gap: 24px;
+				gap: 20px;
 				align-items: flex-start;
+				position: relative;
+			}
+			
+			main article:not(:last-child)::after {
+				content: "";
+				position: absolute;
+				bottom: -8px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 60px;
+				height: 1px;
+				background-color: #eee;
 			}
 
-			main article:hover {
-				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-				transform: translateY(-2px);
-			}
 
 			main article div.app-info {
 				flex: 1;
 			}
 
 			main article p {
-				color: #666;
-				margin: 12px 0 16px 0;
-				line-height: 1.7;
+				color: #333;
+				margin: 10px 0 14px 0;
+				line-height: 1.6;
+				font-size: 0.95em;
 			}
 
 			ul.platform-tags {
@@ -162,25 +181,20 @@
 				font-weight: 500;
 				color: #666;
 				padding: 4px 12px;
-				background-color: #f0f0f0;
+				background-color: #e8e8e8;
 				border-radius: 20px;
 				margin-right: 8px;
 			}
 
 			main img.app-icon {
-				border-radius: 20%;
+				border-radius: 12px;
 				flex-shrink: 0;
 				object-fit: cover;
 			}
 
-			main img.app-icon.mac-os, main img.app-icon.linux {
-				width: 120px;
-				height: 120px;
-			}
-
-			main img.app-icon.ios {
-				width: 120px;
-				height: 120px;
+			main img.app-icon {
+				width: 100px;
+				height: 100px;
 			}
 
 			main article details {
@@ -188,20 +202,43 @@
 			}
 
 			main article details summary {
-				color: #999;
+				color: #0066cc;
 				font-size: 0.9em;
+				font-weight: 500;
 				cursor: pointer;
 				user-select: none;
 				margin-bottom: 12px;
 				transition: color 0.2s ease;
+				text-decoration: underline;
+				text-decoration-color: transparent;
+				transition: text-decoration-color 0.2s ease, color 0.2s ease;
+				list-style: none;
+				position: relative;
+			}
+			
+			main article details summary::-webkit-details-marker {
+				display: none;
+			}
+			
+			main article details summary::before {
+				content: "▶ ";
+				font-weight: normal;
+				text-decoration-color: inherit;
 			}
 
 			main article details summary:hover {
-				color: #666;
+				color: #0052a3;
+				text-decoration-color: currentColor;
 			}
 
 			main article details[open] summary {
 				margin-bottom: 16px;
+				color: #666;
+				text-decoration: none;
+			}
+			
+			main article details[open] summary::before {
+				content: "▼ ";
 			}
 
 			main a.view-button {
@@ -209,39 +246,33 @@
 				text-decoration: none;
 				background-color: #0066cc;
 				color: white;
-				padding: 10px 20px;
+				padding: 8px 16px;
 				margin-top: 8px;
-				border-radius: 8px;
+				border-radius: 6px;
 				font-weight: 500;
-				font-size: 0.95em;
-				transition: background-color 0.2s ease, transform 0.2s ease;
+				font-size: 0.9em;
+				transition: background-color 0.2s ease;
 			}
 
 			main a.view-button:hover {
 				background-color: #0052a3;
-				transform: translateY(-1px);
 			}
 
 			main video.preview {
 				max-width: 100%;
 				max-height: 400px;
-				border-radius: 8px;
-				margin-top: 12px;
+				border-radius: 6px;
+				margin-top: 10px;
 			}
 
 			main a.screenshot > img,
 			main a.promo > img {
 				display: block;
 				max-width: 100%;
-				border-radius: 8px;
-				margin-top: 12px;
-				transition: transform 0.2s ease;
+				border-radius: 6px;
+				margin-top: 10px;
 			}
 
-			main a.screenshot:hover > img,
-			main a.promo:hover > img {
-				transform: scale(1.02);
-			}
 
 			noscript {
 				text-align: center;
@@ -258,6 +289,10 @@
 				header h1 {
 					font-size: 2.2em;
 				}
+				
+				main {
+					padding-bottom: 20px;
+				}
 
 				main section {
 					padding-top: 40px;
@@ -267,15 +302,28 @@
 					flex-direction: column;
 					align-items: center;
 					text-align: center;
+					background: #fafafa;
+					border-radius: 8px;
+					padding: 20px;
+					gap: 8px;
+				}
+				
+				main article:not(:last-child)::after {
+					display: none;
 				}
 
 				main article div.app-info {
 					width: 100%;
 				}
-
-				main img.app-icon {
-					margin-bottom: 16px;
+				
+				main article p {
+					text-align: left;
 				}
+				
+				main article details {
+					text-align: left;
+				}
+
 
 				ul.platform-tags {
 					justify-content: center;
@@ -285,42 +333,49 @@
 			@media (prefers-color-scheme: dark) {
 				body {
 					color: #e0e0e0;
-					background-color: #1a1a1a;
+					background-color: #000;
 				}
 
-				header {
-					border-bottom-color: #333;
-				}
 
 				header .nickname {
-					color: #999;
+					color: #aaa;
 				}
 
 				header p#description {
-					color: #b0b0b0;
+					color: #ccc;
 				}
 
 				header p#location {
-					color: #808080;
+					color: #999;
 				}
 
-				main article {
-					background: #2a2a2a;
-					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-				}
 
-				main article:hover {
-					box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+				main article:not(:last-child)::after {
+					background-color: #333;
+				}
+				
+				main article details summary {
+					color: #4dabf7;
+				}
+				
+				main article details summary:hover {
+					color: #339af0;
+				}
+				
+				main article details[open] summary {
+					color: #999;
 				}
 
 				main article p {
-					color: #b0b0b0;
+					color: #ccc;
 				}
 
 				ul.platform-tags li {
-					background-color: #3a3a3a;
-					color: #d0d0d0;
+					background-color: #333;
+					color: #ccc;
 				}
+
+
 
 				main a.view-button {
 					background-color: #0066cc;
@@ -341,34 +396,42 @@
 				a:visited {
 					color: #b197fc;
 				}
+				
+				@media (max-width: 768px) {
+					main article {
+						background: #1a1a1a;
+					}
+				}
 			}
 		</style>
 	</head>
 	<body>
 		<header>
 			<h1>Igor Savelev <span class="nickname">@leonspok</span></h1>
-			<p id="description">iOS Developer <a href="https://www.goodnotes.com" target="_blank">@Goodnotes</a>. Ex-iOS Core Team <a href="https://bumble.com" target="_blank">@Bumble</a>. Occasional indie macOS/iOS developer.</p>
+			<p id="description">iOS Developer <a href="https://www.goodnotes.com" target="_blank" rel="noopener">@Goodnotes</a>. Ex-iOS Core Team <a href="https://bumble.com" target="_blank" rel="noopener">@Bumble</a>. Occasional indie macOS/iOS developer.</p>
 			<p id="location">Born in Kazan, Russia. Now in London, UK.</p>
-			<ul id="links" class="inline-list">
-				<li>
-					<a href="https://github.com/leonspok" target="_blank">Github</a>
-				</li>
-				<li>
-					<a href="https://www.linkedin.com/in/leonspok/" target="_blank">LinkedIn</a>
-				</li>
-				<li>
-					<a href="https://mastodon.social/@leonspok" target="_blank">Mastodon</a>
-				</li>
-				<li>
-					<a href="https://pixelfed.social/leonspok" target="_blank">Pixelfed</a>
-				</li>
-			</ul>
+			<nav>
+				<ul id="links" class="inline-list">
+					<li>
+						<a href="https://github.com/leonspok" target="_blank" rel="noopener">Github</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/leonspok/" target="_blank" rel="noopener">LinkedIn</a>
+					</li>
+					<li>
+						<a href="https://mastodon.social/@leonspok" target="_blank" rel="me noopener">Mastodon</a>
+					</li>
+					<li>
+						<a href="https://pixelfed.social/leonspok" target="_blank" rel="me noopener">Pixelfed</a>
+					</li>
+				</ul>
+			</nav>
 		</header>
 		<main>
 			<section id="ongoing-projects">
 				<h1>Ongoing projects</h1>
 				<article id="irvue">
-					<img src="irvue/app_icon.png" class="app-icon mac-os">
+					<img src="irvue/app_icon.png" srcset="irvue/app_icon.png 1x, irvue/app_icon@2x.png 2x, irvue/app_icon@3x.png 3x" class="app-icon" alt="Irvue app icon">
 					<div class="app-info">
 						<h2>Irvue</h2>
 						<ul class="platform-tags inline-list">
@@ -389,11 +452,11 @@
 								<source src="irvue/preview.mp4">
 							</video>
 						</details>
-						<a href="https://apps.apple.com/app/irvue/id1039633667" class="view-button" target="_blank">View in App Store</a>
+						<a href="https://apps.apple.com/app/irvue/id1039633667" class="view-button" target="_blank" rel="noopener">View in App Store</a>
 					</div>
 				</article>
 				<article id="kuar">
-					<img src="kuar/app_icon.png" class="app-icon mac-os">
+					<img src="kuar/app_icon.png" srcset="kuar/app_icon.png 1x, kuar/app_icon@2x.png 2x, kuar/app_icon@3x.png 3x" class="app-icon" alt="Kuar app icon">
 					<div class="app-info">
 						<h2>Kuar</h2>
 						<ul class="platform-tags inline-list">
@@ -411,11 +474,11 @@
 								<source src="kuar/preview.mp4">
 							</video>
 						</details>
-						<a href="https://apps.apple.com/app/kuar-qr-code-generator/id1553562554" class="view-button" target="_blank">View in App Store</a>
+						<a href="https://apps.apple.com/app/kuar-qr-code-generator/id1553562554" class="view-button" target="_blank" rel="noopener">View in App Store</a>
 					</div>
 				</article>
 				<article id="yul">
-					<img src="yul/app_icon.png" class="app-icon ios">
+					<img src="yul/app_icon.png" srcset="yul/app_icon.png 1x, yul/app_icon@2x.png 2x, yul/app_icon@3x.png 3x" class="app-icon" alt="yul app icon">
 					<div class="app-info">
 						<h2>yul</h2>
 						<ul class="platform-tags inline-list">
@@ -433,11 +496,11 @@
 								<source src="yul/preview.mp4">
 							</video>
 						</details>
-						<a href="https://apps.apple.com/app/yul-gpx-track-recorder/id6740010980" class="view-button" target="_blank">View in App Store</a>
+						<a href="https://apps.apple.com/app/yul-gpx-track-recorder/id6740010980" class="view-button" target="_blank" rel="noopener">View in App Store</a>
 					</div>
 				</article>
 				<article id="tynlau">
-					<img src="tynlau/app_icon.png" class="app-icon mac-os">
+					<img src="tynlau/app_icon.png" srcset="tynlau/app_icon.png 1x, tynlau/app_icon@2x.png 2x, tynlau/app_icon@3x.png 3x" class="app-icon" alt="tynlau app icon">
 					<div class="app-info">
 						<h2>tynlau</h2>
 						<ul class="platform-tags inline-list">
@@ -455,11 +518,11 @@
 								<source src="tynlau/preview.mp4">
 							</video>
 						</details>
-						<a href="https://apps.apple.com/app/tynlau-music-recogniser/id6742663367" class="view-button" target="_blank">View in App Store</a>
+						<a href="https://apps.apple.com/app/tynlau-music-recogniser/id6742663367" class="view-button" target="_blank" rel="noopener">View in App Store</a>
 					</div>
 				</article>
 				<article id="yape">
-					<img src="yape/app_icon.png" class="app-icon mac-os">
+					<img src="yape/app_icon.png" srcset="yape/app_icon.png 1x, yape/app_icon@2x.png 2x, yape/app_icon@3x.png 3x" class="app-icon" alt="Yape app icon">
 					<div class="app-info">
 						<h2>Yape - Yet Another PiP Extension</h2>
 						<ul class="platform-tags inline-list">
@@ -472,14 +535,14 @@
 								<img src="yape/screenshot_1.png">
 							</a>
 						</details>
-						<a href="https://github.com/leonspok/Yape" class="view-button" target="_blank">View on GitHub</a>
+						<a href="https://github.com/leonspok/Yape" class="view-button" target="_blank" rel="noopener">View on GitHub</a>
 					</div>
 				</article>
 			</section>
 			<section id="discontinued">
 				<h1>Discontinued</h1>
 				<article id="qtpip">
-					<img src="qtpip/app_icon.png" class="app-icon linux">
+					<img src="qtpip/app_icon.png" srcset="qtpip/app_icon.png 1x, qtpip/app_icon@2x.png 2x, qtpip/app_icon@3x.png 3x" class="app-icon" alt="QtPiP app icon">
 					<div class="app-info">
 						<h2>QtPiP</h2>
 						<ul class="platform-tags inline-list">
@@ -492,11 +555,11 @@
 								<img src="qtpip/screenshot_1.png">
 							</a>
 						</details>
-						<a href="https://github.com/leonspok/QtPiP" class="view-button" target="_blank">View on GitHub</a>
+						<a href="https://github.com/leonspok/QtPiP" class="view-button" target="_blank" rel="noopener">View on GitHub</a>
 					</div>
 				</article>
 				<article id="10s">
-					<img src="10s/app_icon.png" class="app-icon ios">
+					<img src="10s/app_icon.png" srcset="10s/app_icon.png 1x, 10s/app_icon@2x.png 2x, 10s/app_icon@3x.png 3x" class="app-icon" alt="10s app icon">
 					<div class="app-info">
 						<h2>10s</h2>
 						<ul class="platform-tags inline-list">
@@ -504,7 +567,7 @@
 							<li>iPadOS</li>
 							<li>tvOS</li>
 						</ul>
-						<p>Unofficial client for <a href="https://coub.com" target="_blank">Coub</a></p>
+						<p>Unofficial client for <a href="https://coub.com" target="_blank" rel="noopener">Coub</a></p>
 						<details>
 							<summary>More</summary>
 							<a href="10s/promo_1.jpeg" target="_blank" class="promo">
@@ -514,7 +577,7 @@
 					</div>
 				</article>
 				<article id="habco">
-					<img src="habco/app_icon.png" class="app-icon ios">
+					<img src="habco/app_icon.png" srcset="habco/app_icon.png 1x, habco/app_icon@2x.png 2x, habco/app_icon@3x.png 3x" class="app-icon" alt="Habco app icon">
 					<div class="app-info">
 						<h2>Habco</h2>
 						<ul class="platform-tags inline-list">
@@ -530,7 +593,7 @@
 					</div>
 				</article>
 				<article id="fair_enough">
-					<img src="fair_enough/app_icon.png" class="app-icon ios">
+					<img src="fair_enough/app_icon.png" srcset="fair_enough/app_icon.png 1x, fair_enough/app_icon@2x.png 2x, fair_enough/app_icon@3x.png 3x" class="app-icon" alt="Fair Enough app icon">
 					<div class="app-info">
 						<h2>Fair Enough</h2>
 						<ul class="platform-tags inline-list">
