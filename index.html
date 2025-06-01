@@ -11,9 +11,12 @@
 		<style>
 			body {
 				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-				font-size: 12pt;
-				color: black;
-				background-color: white;
+				font-size: 16px;
+				line-height: 1.6;
+				color: #333;
+				background-color: #fafafa;
+				margin: 0;
+				padding: 0;
 			}
 
 			header, main {
@@ -21,169 +24,322 @@
 				padding-right: 20px;
 				margin-left: auto;
 				margin-right: auto;
-				max-width: 768px;
+				max-width: 900px;
 			}
 
 			a {
-				color: #1ab4f2;
+				color: #0066cc;
+				text-decoration: none;
+				transition: color 0.2s ease;
+			}
+
+			a:hover {
+				color: #0052a3;
+				text-decoration: underline;
 			}
 
 			a:visited {
-				color: #a03bff;
+				color: #6b46c1;
 			}
 
 			ul.inline-list {
 				list-style: none;
 				padding: 0;
+				margin: 0;
 			}
 
 			ul.inline-list li {
 				display: inline;
+				margin-right: 20px;
+			}
+
+			ul.inline-list li:last-child {
+				margin-right: 0;
 			}
 
 			header {
-				padding-top: 50px;
+				padding-top: 60px;
+				padding-bottom: 40px;
+				text-align: center;
+				border-bottom: 1px solid #e0e0e0;
 			}
 
 			header h1 {
-				font-size: 2.5em;
+				font-size: 2.8em;
+				font-weight: 700;
+				margin: 0 0 10px 0;
+				letter-spacing: -0.02em;
 			}
 
-			header p, header ul {
-				margin-top: 0.6em;
-				margin-bottom: 0.6em;
+			header .nickname {
+				font-weight: 400;
+				color: #666;
+			}
+
+			header p#description {
+				font-size: 1.2em;
+				color: #666;
+				margin: 15px 0;
+			}
+
+			header p#location {
+				color: #999;
+				font-size: 1em;
+				margin: 10px 0;
 			}
 
 			header p#location::before {
-				content: "🗺 ";
+				content: "📍 ";
 			}
 
-			header ul#links::before {
-				content: "🔗 ";
+			header ul#links {
+				margin-top: 25px;
+				font-size: 1em;
 			}
 
 			main {
-				padding-bottom: 100px;
+				padding-bottom: 80px;
 			}
 
 			main section {
-				padding-top: 100px;
+				padding-top: 60px;
+			}
+
+			main section:first-child {
+				padding-top: 50px;
 			}
 
 			main h1 {
-				font-size: 2.2em;
-				margin-bottom: 0;
+				font-size: 2em;
+				font-weight: 600;
+				margin-bottom: 30px;
+				letter-spacing: -0.01em;
 			}
 
 			main h2 {
-				font-size: 1.4em;
-				font-weight: medium;
-				margin-bottom: 10px;
+				font-size: 1.5em;
+				font-weight: 600;
+				margin: 0 0 8px 0;
+				letter-spacing: -0.01em;
 			}
 
 			main article {
+				background: white;
+				border-radius: 12px;
+				padding: 24px;
+				margin-bottom: 20px;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+				transition: box-shadow 0.3s ease, transform 0.3s ease;
 				display: flex;
-				flex-direction: row-reverse;
-				flex-wrap: nowrap;
-				justify-content: space-between;
+				gap: 24px;
+				align-items: flex-start;
 			}
 
-			main article:not(:last-child) {
-				padding-bottom: 70px;
+			main article:hover {
+				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+				transform: translateY(-2px);
+			}
+
+			main article div.app-info {
+				flex: 1;
+			}
+
+			main article p {
+				color: #666;
+				margin: 12px 0 16px 0;
+				line-height: 1.7;
 			}
 
 			ul.platform-tags {
-				margin-top: 0;
+				margin: 0 0 12px 0;
+				gap: 8px;
+				display: flex;
+				flex-wrap: wrap;
 			}
 
 			ul.platform-tags li {
-				font-size: 10pt;
-				color: white;
-				padding-top: 5px;
-				padding-bottom: 5px;
-				padding-left: 8px;
-				padding-right: 8px;
-				background-color: #BBB;
-				border-radius: 5px;
+				font-size: 0.85em;
+				font-weight: 500;
+				color: #666;
+				padding: 4px 12px;
+				background-color: #f0f0f0;
+				border-radius: 20px;
+				margin-right: 8px;
+			}
+
+			main img.app-icon {
+				border-radius: 20%;
+				flex-shrink: 0;
+				object-fit: cover;
 			}
 
 			main img.app-icon.mac-os, main img.app-icon.linux {
-				width: 160px;
-				height: 160px;
-				padding: 10px;
+				width: 120px;
+				height: 120px;
 			}
 
 			main img.app-icon.ios {
-				width: 134px;
-				height: 134px;
-				padding: 23px;
+				width: 120px;
+				height: 120px;
 			}
 
 			main article details {
-				margin-bottom: 20px;
+				margin: 16px 0;
 			}
 
 			main article details summary {
-				color: #BBB;
-				font-size: 0.8em;
-				margin-bottom: 10px;
+				color: #999;
+				font-size: 0.9em;
+				cursor: pointer;
+				user-select: none;
+				margin-bottom: 12px;
+				transition: color 0.2s ease;
+			}
+
+			main article details summary:hover {
+				color: #666;
+			}
+
+			main article details[open] summary {
+				margin-bottom: 16px;
 			}
 
 			main a.view-button {
 				display: inline-block;
 				text-decoration: none;
-				background-color: #1ab4f2;
+				background-color: #0066cc;
 				color: white;
-				padding-top: 5px;
-				padding-bottom: 5px;
-				padding-left: 8px;
-				padding-right: 8px;
-				margin-top: 10px;
-				border-radius: 5px;
+				padding: 10px 20px;
+				margin-top: 8px;
+				border-radius: 8px;
+				font-weight: 500;
+				font-size: 0.95em;
+				transition: background-color 0.2s ease, transform 0.2s ease;
+			}
+
+			main a.view-button:hover {
+				background-color: #0052a3;
+				transform: translateY(-1px);
 			}
 
 			main video.preview {
 				max-width: 100%;
 				max-height: 400px;
-				border-radius: 5px;
+				border-radius: 8px;
+				margin-top: 12px;
 			}
 
 			main a.screenshot > img,
 			main a.promo > img {
 				display: block;
 				max-width: 100%;
-				border-radius: 5px;
+				border-radius: 8px;
+				margin-top: 12px;
+				transition: transform 0.2s ease;
+			}
+
+			main a.screenshot:hover > img,
+			main a.promo:hover > img {
+				transform: scale(1.02);
 			}
 
 			noscript {
 				text-align: center;
+				padding: 40px;
+				color: #999;
 			}
 
-			@media (max-width: 480px) {
+			@media (max-width: 768px) {
+				header {
+					padding-top: 40px;
+					padding-bottom: 30px;
+				}
+
+				header h1 {
+					font-size: 2.2em;
+				}
+
+				main section {
+					padding-top: 40px;
+				}
+
 				main article {
-					align-items: center;
 					flex-direction: column;
+					align-items: center;
+					text-align: center;
 				}
 
 				main article div.app-info {
 					width: 100%;
 				}
 
-				main img.app-icon.ios, 
-				main img.app-icon.mac-os,
-				main img.app-icon.linux {
-					padding-bottom: 0;
+				main img.app-icon {
+					margin-bottom: 16px;
+				}
+
+				ul.platform-tags {
+					justify-content: center;
 				}
 			}
 
 			@media (prefers-color-scheme: dark) {
 				body {
-					color: white;
-					background-color: #1F1F1F;
+					color: #e0e0e0;
+					background-color: #1a1a1a;
+				}
+
+				header {
+					border-bottom-color: #333;
+				}
+
+				header .nickname {
+					color: #999;
+				}
+
+				header p#description {
+					color: #b0b0b0;
+				}
+
+				header p#location {
+					color: #808080;
+				}
+
+				main article {
+					background: #2a2a2a;
+					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+				}
+
+				main article:hover {
+					box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+				}
+
+				main article p {
+					color: #b0b0b0;
 				}
 
 				ul.platform-tags li {
-					background-color: #999;
+					background-color: #3a3a3a;
+					color: #d0d0d0;
+				}
+
+				main a.view-button {
+					background-color: #0066cc;
+				}
+
+				main a.view-button:hover {
+					background-color: #0052a3;
+				}
+
+				a {
+					color: #4dabf7;
+				}
+
+				a:hover {
+					color: #339af0;
+				}
+
+				a:visited {
+					color: #b197fc;
 				}
 			}
 		</style>
@@ -259,7 +415,7 @@
 					</div>
 				</article>
 				<article id="yul">
-					<img src="yul/app_icon.png" class="app-icon mac-os">
+					<img src="yul/app_icon.png" class="app-icon ios">
 					<div class="app-info">
 						<h2>yul</h2>
 						<ul class="platform-tags inline-list">
