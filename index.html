@@ -53,6 +53,41 @@
 			a:visited {
 				color: #6b46c1;
 			}
+			
+			/* Focus indicators for accessibility */
+			a:focus,
+			summary:focus {
+				outline: 2px solid #0066cc;
+				outline-offset: 2px;
+				border-radius: 2px;
+			}
+			
+			/* Ensure focus is visible even when styling is custom */
+			a:focus-visible,
+			summary:focus-visible {
+				outline: 2px solid #0066cc;
+				outline-offset: 2px;
+			}
+			
+			/* Skip navigation link */
+			.skip-link {
+				position: absolute;
+				top: -40px;
+				left: 6px;
+				background: #0066cc;
+				color: white;
+				padding: 8px;
+				text-decoration: none;
+				border-radius: 4px;
+				z-index: 1000;
+				font-weight: 500;
+			}
+			
+			.skip-link:focus {
+				top: 6px;
+				outline: 2px solid #fff;
+				outline-offset: 2px;
+			}
 
 			ul.inline-list {
 				list-style: none;
@@ -83,17 +118,17 @@
 
 			header .nickname {
 				font-weight: 400;
-				color: #666;
+				color: #555;
 			}
 
 			header p#description {
 				font-size: 1.1em;
-				color: #333;
+				color: #222;
 				margin: 12px 0;
 			}
 
 			header p#location {
-				color: #666;
+				color: #555;
 				font-size: 0.95em;
 				margin: 8px 0;
 			}
@@ -163,7 +198,7 @@
 			}
 
 			main article p {
-				color: #333;
+				color: #222;
 				margin: 10px 0 14px 0;
 				line-height: 1.6;
 				font-size: 0.95em;
@@ -179,7 +214,7 @@
 			ul.platform-tags li {
 				font-size: 0.85em;
 				font-weight: 500;
-				color: #666;
+				color: #444;
 				padding: 4px 12px;
 				background-color: #e8e8e8;
 				border-radius: 20px;
@@ -233,7 +268,7 @@
 
 			main article details[open] summary {
 				margin-bottom: 16px;
-				color: #666;
+				color: #555;
 				text-decoration: none;
 			}
 			
@@ -397,6 +432,14 @@
 					color: #b197fc;
 				}
 				
+				/* Dark mode focus indicators */
+				a:focus,
+				a:focus-visible,
+				summary:focus,
+				summary:focus-visible {
+					outline-color: #4dabf7;
+				}
+				
 				@media (max-width: 768px) {
 					main article {
 						background: #1a1a1a;
@@ -406,30 +449,31 @@
 		</style>
 	</head>
 	<body>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 		<header>
 			<h1>Igor Savelev <span class="nickname">@leonspok</span></h1>
 			<p id="description">iOS Developer <a href="https://www.goodnotes.com" target="_blank" rel="noopener">@Goodnotes</a>. Ex-iOS Core Team <a href="https://bumble.com" target="_blank" rel="noopener">@Bumble</a>. Occasional indie macOS/iOS developer.</p>
 			<p id="location">Born in Kazan, Russia. Now in London, UK.</p>
-			<nav>
+			<nav aria-label="Social media links">
 				<ul id="links" class="inline-list">
 					<li>
-						<a href="https://github.com/leonspok" target="_blank" rel="noopener">Github</a>
+						<a href="https://github.com/leonspok" target="_blank" rel="noopener" aria-label="Igor's GitHub profile">Github</a>
 					</li>
 					<li>
-						<a href="https://www.linkedin.com/in/leonspok/" target="_blank" rel="noopener">LinkedIn</a>
+						<a href="https://www.linkedin.com/in/leonspok/" target="_blank" rel="noopener" aria-label="Igor's LinkedIn profile">LinkedIn</a>
 					</li>
 					<li>
-						<a href="https://mastodon.social/@leonspok" target="_blank" rel="me noopener">Mastodon</a>
+						<a href="https://mastodon.social/@leonspok" target="_blank" rel="me noopener" aria-label="Igor's Mastodon profile">Mastodon</a>
 					</li>
 					<li>
-						<a href="https://pixelfed.social/leonspok" target="_blank" rel="me noopener">Pixelfed</a>
+						<a href="https://pixelfed.social/leonspok" target="_blank" rel="me noopener" aria-label="Igor's Pixelfed profile">Pixelfed</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
-		<main>
-			<section id="ongoing-projects">
-				<h1>Ongoing projects</h1>
+		<main id="main-content">
+			<section id="ongoing-projects" aria-labelledby="ongoing-heading">
+				<h1 id="ongoing-heading">Ongoing projects</h1>
 				<article id="irvue">
 					<img src="irvue/app_icon.png" srcset="irvue/app_icon.png 1x, irvue/app_icon@2x.png 2x, irvue/app_icon@3x.png 3x" class="app-icon" alt="Irvue app icon">
 					<div class="app-info">
@@ -539,8 +583,8 @@
 					</div>
 				</article>
 			</section>
-			<section id="discontinued">
-				<h1>Discontinued</h1>
+			<section id="discontinued" aria-labelledby="discontinued-heading">
+				<h1 id="discontinued-heading">Discontinued</h1>
 				<article id="qtpip">
 					<img src="qtpip/app_icon.png" srcset="qtpip/app_icon.png 1x, qtpip/app_icon@2x.png 2x, qtpip/app_icon@3x.png 3x" class="app-icon" alt="QtPiP app icon">
 					<div class="app-info">
