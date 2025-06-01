@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{APP_NAME}} for {{PLATFORM}} - {{TAGLINE}}</title>
+        <meta name="description" content="{{META_DESCRIPTION}}">
+        <meta name="keywords" content="{{META_KEYWORDS}}">
+        
+        <!-- Open Graph -->
+        <meta property="og:title" content="{{APP_NAME}} for {{PLATFORM}} - {{TAGLINE}}">
+        <meta property="og:description" content="{{META_DESCRIPTION}}">
+        <meta property="og:url" content="https://leonspok.com/{{APP_FOLDER}}/landing">
+        <meta property="og:image" content="https://leonspok.com/{{APP_FOLDER}}/app_icon.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Igor Savelev">
+        
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{APP_NAME}} for {{PLATFORM}} - {{TAGLINE}}">
+        <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+        <meta name="twitter:image" content="https://leonspok.com/{{APP_FOLDER}}/app_icon.png">
+        <meta name="twitter:creator" content="@leonspok">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="../../styles/landing.css">
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <main id="main-content">
+            <section class="hero" aria-labelledby="hero-heading">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <img src="../../resources/{{APP_FOLDER}}/icon_128x128.png" srcset="../../resources/{{APP_FOLDER}}/icon_128x128.png 1x, ../../resources/{{APP_FOLDER}}/icon_128x128@2x.png 2x, ../../resources/{{APP_FOLDER}}/icon_128x128@3x.png 3x" alt="{{APP_NAME}} app icon" class="hero-icon">
+                        <h1 id="hero-heading">{{APP_NAME}}</h1>
+                        <p>{{DESCRIPTION}}</p>
+                        <a href="{{CTA_URL}}" class="cta-button" target="_blank" rel="noopener" aria-describedby="cta-description">{{CTA_TEXT}}</a>
+                        <span id="cta-description" class="sr-only">{{CTA_ARIA_DESCRIPTION}}</span>
+                    </div>
+                    <div class="hero-image">
+                        {{MEDIA_ELEMENT}}
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
