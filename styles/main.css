@@ -325,7 +325,7 @@ noscript {
 @media (prefers-color-scheme: dark) {
 	body {
 		color: #e0e0e0;
-		background-color: #000;
+		background-color: #202020;
 	}
 
 	header .nickname {
