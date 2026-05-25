@@ -11,6 +11,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.4;
     color: #333;
+    background-color: #fff;
 }
 
 img, video {
@@ -142,6 +143,49 @@ video:focus {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+.hero-image.app-preview-pair {
+    gap: 20px;
+}
+
+.hero-image.app-preview-pair video {
+    width: min(46%, 260px);
+}
+
+.details-section {
+    padding: 20px 20px 80px;
+}
+
+.details-content {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.details-content h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.details-content p {
+    color: #555;
+    font-size: 1.08rem;
+    margin-bottom: 18px;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 24px;
+    margin: 28px 0;
+    padding-left: 20px;
+    color: #333;
+}
+
+.feature-list li {
+    padding-left: 4px;
+}
+
 .cta-button {
     display: inline-block;
     background: #0066cc;
@@ -198,6 +242,26 @@ video:focus {
     .hero-image video {
         max-height: none;
     }
+
+    .hero-image.app-preview-pair {
+        align-items: flex-start;
+    }
+
+    .hero-image.app-preview-pair video {
+        width: min(48%, 220px);
+    }
+
+    .details-section {
+        padding: 0 20px 60px;
+    }
+
+    .details-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Dark mode */
@@ -238,5 +302,17 @@ video:focus {
     
     .hero-image img {
         box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .details-content h2 {
+        color: #ffffff;
+    }
+
+    .details-content p {
+        color: #cccccc;
+    }
+
+    .feature-list {
+        color: #e0e0e0;
     }
 }
